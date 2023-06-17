@@ -67,8 +67,8 @@ get_metadata <- function(sensorMSS, sensorTM, timediff, point) {
     data.frame(
         mission = sensor_name,
         mss_id = final_mss_ic$id,
-        tm_id = final_mss_ic$id,
-        roi_id = point$point
+        tm_id = final_tm_ic$id,
+        roi_id = point$roi_id
     )
 }
 

@@ -41,18 +41,16 @@ for (index in 1:nrow(metadata)) {
     coordinate <- metadata[index,]
     container[[index]] <- get_metadata(
         sensorMSS = "LANDSAT/LT04/C02/T2",
-        sensorTM = "LANDSAT/LM04/C02/ ",
+        sensorTM = "LANDSAT/LM04/C02/T2",
         timediff = 10,
         point = coordinate
     )
 }
 metadata_L4 <- do.call(rbind, container)
 
-
-
 # Create metadata table L5 MSS/TM
 container <- list()
-for (index in 1:nrow(metadata)) {
+for (index in 5853:nrow(metadata)) { #Fijate en el 1036
     print(index)
     coordinate <- metadata[index,]
     container[[index]] <- get_metadata(
@@ -62,4 +60,7 @@ for (index in 1:nrow(metadata)) {
         point = coordinate
     )
 }
+
 metadata_L5 <- do.call(rbind, container)
+
+# write.csv(metadata_L51,"D:/CURSOS_2022/Repos/dataset3/GetIDMetadata/dataset3_L4andL5/data/L5.csv", row.names = F)
